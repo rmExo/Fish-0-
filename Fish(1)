@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Fish {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int trout = sc.nextInt();
+        int pike = sc.nextInt();
+        int pickerel = sc.nextInt();
+        int total = sc.nextInt();
+        int i =0;
+        int j =0;
+        int k =0;
+        int counter = 0;
+
+
+        for( i = 0; total >= i*trout + j*pike + k* pickerel; i++){
+            for( j =0; total >= i*trout + j*pike + k* pickerel; j++){
+                for( k =0; total >= i*trout + j*pike + k* pickerel; k++){
+                    if((i+j+k) < 1 ){
+                        if(total > pickerel){
+                            System.out.println("0 Brown Trout, 0 Northern Pike, 1 Yellow Pickerel");
+                            counter++;
+                        }
+                    }
+                    else{
+                        if(total >= i*trout + j*pike + k* pickerel){
+                            System.out.println( i +" Brown Trout," + j+ " Northern Pike, " + k +" Yellow Pickerel");
+                            counter++;
+                        }
+                    }
+                    k =0;
+                }
+            } j=0;
+        }
+    }
+}
