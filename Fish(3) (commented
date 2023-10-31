@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Fish {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        // getting important variable values
+        int trout = sc.nextInt();
+        int pike = sc.nextInt();
+        int pickerel = sc.nextInt();
+        int total = sc.nextInt();
+        // creating values to cycle through
+        int i =0;
+        int j =0;
+        int k =0;
+        //counting how many values are valid.
+        int counter = 0;
+
+// loops to cycle through every possble possibility
+        for( i = 0; total >= i*trout + j*pike + k* pickerel; i++){
+          //  System.out.println("a");
+            for( j =0; total >= i*trout + j*pike + k* pickerel; j++){
+           //     System.out.println("b");
+                for( k =0; total >= i*trout + j*pike + k* pickerel; k++){
+            //        System.out.println("c");
+            // if statement to avoid the case of (0,0,0)
+                    if(i+j+k > 0) {
+                        // if statement to check if its a valid solution, or it shouldn't be counted. 
+                        if (total >= i * trout + j * pike + k * pickerel) {
+                            System.out.println(i + " Brown Trout, " + j + " Northern Pike, " + k + " Yellow Pickerel");
+                            counter++;
+                        }
+                    }
+                }
+                // resetting the internal values
+                k =0;
+                //resetting the internal values
+            } j=0;
+        }
+        // end print statement
+        System.out.println("Number of ways to catch fish: " +counter);
+    }
+}
